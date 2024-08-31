@@ -1,12 +1,15 @@
 import qrcode
 from qrcode.image.styledpil import StyledPilImage
-from qrcode.image.styles.moduledrawers import GappedSquareModuleDrawer
+# GappedSquareModuleDrawer,HorizontalBarsDrawer,RoundedModuleDrawer,
+# SquareModuleDrawer,VerticalBarsDrawer,CircleModuleDrawer
+from qrcode.image.styles.moduledrawers import CircleModuleDrawer
+# SolidFillColorMask,HorizontalGradiantColorMask,ImageColorMask,
+# RadialGradiantColorMask,VerticalGradiantColorMask
 from qrcode.image.styles.colormasks import SolidFillColorMask
 from PIL import Image, ImageDraw, ImageStat
 import cv2
 import os
 import random
-
 
 def prepare_logo(logo_path, border_radius, logo_size=(100, 100)):
     """
@@ -110,7 +113,7 @@ def QRCode_embed_image(url, img_path, logo_size=(100, 100), img_border_radius=10
     # Create the QR code image
     qr_img = qr.make_image(
         image_factory=StyledPilImage,
-        module_drawer=GappedSquareModuleDrawer(),
+        module_drawer=CircleModuleDrawer(),
         color_mask=SolidFillColorMask(
             back_color=back_color, front_color=front_color)
     )
@@ -167,7 +170,7 @@ def QRCode_basic(url,
 
     qr_img = qr.make_image(
         image_factory=StyledPilImage,
-        module_drawer=GappedSquareModuleDrawer(),
+        module_drawer=CircleModuleDrawer(),
         color_mask=SolidFillColorMask(
             back_color=back_color, front_color=front_color)
     )
