@@ -13,8 +13,8 @@ def main():
     url = "https://boitekongeats.co.za"
     logo_path = "images/logo_1.png"
 
-    QRCode_basic(url)
-    # QRCode_embed_image(url, logo_path)
+    # QRCode_basic(url)
+    QRCode_embed_image(url, logo_path, logo_size=(90,90), img_border_radius=50,border_radius=10)
 
     print("QR code generation process completed.")
 
