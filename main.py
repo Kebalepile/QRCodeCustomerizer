@@ -1,4 +1,4 @@
-from make_qrcode import basic_QRCode
+from make_qrcode import QRCode_embed_image
 
 def main():
     """
@@ -11,7 +11,7 @@ def main():
     
     url = "https://boitekongeats.co.za"
     logo_path = "images/logo_1.png"  # Ensure this path is correct
-    basic_QRCode(url, logo_path)
+    QRCode_embed_image(url, logo_path)
     
     print("QR code generation process completed.")
 
